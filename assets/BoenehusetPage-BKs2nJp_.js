@@ -1,1 +1,0 @@
-import{_ as a,K as o,a4 as t,a7 as s,a8 as c,a3 as n}from"./index-CsfUoPaE.js";const d={name:"BoenehusetPage"},_=e=>(s("data-v-ce23a51d"),e=e(),c(),e),p=_(()=>n("h1",null,"Welcome to Boenehuset Page",-1)),r=[p];function u(e,h,l,i,f,m){return o(),t("div",null,r)}const I=a(d,[["render",u],["__scopeId","data-v-ce23a51d"]]);export{I as default};
