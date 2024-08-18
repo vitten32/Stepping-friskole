@@ -1,8 +1,8 @@
 <template>
-  <v-card class="school-value-card" elevation="4" lg="10">
+  <v-card class="school-value-card" elevation="4">
     <v-sheet class="school-value-card__header" elevation="2">
-      <h2 class="values-title">Vi tager udgangspunkt i det enkelte barn</h2>
-      <h2 class="values-title">i fællesskabet</h2>
+      <h2 class="values_title">Vi tager udgangspunkt i det enkelte barn</h2>
+      <h2 class="values_title">i fællesskabet</h2>
     </v-sheet>
     <v-card-text>
       <h3 class="branding-title">
@@ -56,26 +56,26 @@
   padding: 0;
   border-radius: 12px;
   overflow: hidden;
-  background-color: var(--background);
+  background-color: var(--surface-color); /* Brug farve defineret i settings.scss */
 }
 
 .school-value-card__header {
-  background-color: var(--background);
-  color: var(--text);
+  background-color: var(--primary-color); /* Brug primærfarven */
+  color: var(--text-color); /* Brug tekstfarven */
   padding: 16px;
   text-align: center;
 }
 
-.values-title {
+.values_title {
   font-family: 'Gloria Hallelujah', cursive;
   font-size: 2.5rem;
-  color: var(--text);
+  color: var(--secondary-color); /* Brug sekundærfarven */
   margin: 0;
 }
 
 .branding-title {
   font-size: 1.8rem;
-  color: var(--text);
+  color: var(--text-color); /* Brug tekstfarven */
   margin-bottom: 15px;
   display: flex;
   align-items: center;
@@ -83,7 +83,7 @@
 
 .branding-subtitle {
   font-size: 1.25rem;
-  color: var(--text);
+  color: var(--text-color); /* Brug tekstfarven */
   margin-bottom: 10px;
 }
 
@@ -93,13 +93,13 @@
 }
 
 .branding-list .v-list-item-content {
-  color: var(--text);
+  color: var(--text-color); /* Brug tekstfarven */
   display: flex;
   align-items: center;
 }
 
 p {
-  color: var(--text);
+  color: var(--text-color); /* Brug tekstfarven */
   line-height: 1.6;
   margin-bottom: 15px;
   font-size: 1.1rem;

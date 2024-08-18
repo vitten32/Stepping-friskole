@@ -2,16 +2,16 @@
   <v-container>
     <v-row justify="center" class="my-8">
       <v-col
-        v-for="post in randomPosts"
+        v-for="post in latestPosts"
         :key="post.id"
         cols="12"
         md="4"
         lg="3"
         class="d-flex"
       >
-        <v-card class="post-card">
+        <v-card class="post-card d-flex flex-column">
           <v-card-title class="title">{{ post.title.rendered }}</v-card-title>
-          <v-card-text v-html="post.excerpt.rendered" class="excerpt"></v-card-text>
+          <v-card-text v-html="post.excerpt.rendered" class="excerpt flex-grow-1" />
           <v-card-actions>
             <v-btn :to="`/post/${post.id}`" color="primary" class="mx-auto">
               Læs mere
@@ -34,15 +34,12 @@ interface Post {
   link: string;
 }
 
-const randomPosts = ref<Post[]>([]);
+const latestPosts = ref<Post[]>([]);
 
 const fetchPostsFromWordPress = async () => {
   try {
-    const response = await axios.get<Post[]>('https://stepping-friskole.dk/wp-json/wp/v2/posts');
-    const posts = response.data;
-
-    // Vælg 4 tilfældige indlæg
-    randomPosts.value = posts.sort(() => 0.5 - Math.random()).slice(0, 4);
+    const response = await axios.get<Post[]>('https://stepping-friskole.dk/wp-json/wp/v2/posts?per_page=4&orderby=date&order=desc');
+    latestPosts.value = response.data;
   } catch (error) {
     console.error('Fejl ved hentning af indlæg:', error);
   }
@@ -57,6 +54,11 @@ onMounted(fetchPostsFromWordPress);
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
+  background-color: var(--surface-color); /* Bruger overfladefarve fra settings.scss */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
 
 .post-card:hover {
@@ -66,23 +68,24 @@ onMounted(fetchPostsFromWordPress);
 .title {
   font-family: 'Gloria Hallelujah', cursive;
   font-size: 1.5rem;
-  color: #003366; /* Skolens primærfarve */
+  color: var(--primary-color); /* Brug skolens primærfarve */
 }
 
 .excerpt {
-  font-family: 'Roboto', sans-serif;
+  font-family: var(--body-font-family); /* Brug Roboto fra settings.scss */
   font-size: 1rem;
-  color: #333333; /* Skolens tekstfarve */
+  color: var(--text-color); /* Brug skolens tekstfarve */
+  flex-grow: 1;
 }
 
 v-btn {
-  font-family: 'Roboto', sans-serif;
-  font-weight: bold;
+  font-family: var(--body-font-family); /* Brug Roboto fra settings.scss */
+  font-weight: var(--headings-font-weight); /* Brug overskriftsvægt fra settings.scss */
   text-transform: none;
   color: white;
 }
 
 v-btn:hover {
-  background-color: #4CAF50; /* Skolens accentfarve */
+  background-color: var(--accent-color); /* Brug skolens accentfarve */
 }
 </style>

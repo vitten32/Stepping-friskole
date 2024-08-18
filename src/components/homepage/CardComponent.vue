@@ -49,7 +49,7 @@ const handleClick = () => {
 .title {
   font-family: 'Gloria Hallelujah', cursive;
   font-size: 1.5rem;
-  color: #003366;
+  color: var(--primary-color); /* Brug CSS-variablen fra settings.scss */
 }
 
 .image {

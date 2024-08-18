@@ -25,6 +25,7 @@
     </v-row>
   </v-container>
 </template>
+
 <script lang="ts" setup>
   import { onMounted, ref } from 'vue'
   import { useRoute } from 'vue-router'
@@ -44,7 +45,6 @@
 
   const fetchPostDetails = async () => {
     try {
-      // @ts-ignore
       const postId = route.params.id as string
       const response = await axios.get<Post>(`https://stepping-friskole.dk/wp-json/wp/v2/posts/${postId}`)
       post.value = response.data
@@ -63,13 +63,13 @@
 .title {
   font-family: 'Gloria Hallelujah', cursive;
   font-size: 2rem;
-  color: #003366;
+  color: var(--primary-color); /* Brug CSS-variablen fra settings.scss */
 }
 
 .content {
   font-family: 'Roboto', sans-serif;
   font-size: 1rem;
-  color: #333333;
+  color: var(--text-color); /* Brug CSS-variablen fra settings.scss */
 }
 
 img {

@@ -7,14 +7,15 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
-    AppFooter: typeof import('./components/AppFooter.vue')['default']
-    CardComponent: typeof import('./components/CardComponent.vue')['default']
+    AppFooter: typeof import('./components/homepage/AppFooter.vue')['default']
+    CardComponent: typeof import('./components/homepage/CardComponent.vue')['default']
     HomeHeader: typeof import('./components/homepage/HomeHeader.vue')['default']
-    Navbar: typeof import('./components/Navbar.vue')['default']
-    RandomPostsSection: typeof import('./components/RandomPostsSection.vue')['default']
+    Navbar: typeof import('./components/homepage/Navbar.vue')['default']
+    RandomPostsSection: typeof import('./components/homepage/RandomPostsSection.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     SchoolValueCard: typeof import('./components/homepage/SchoolValueCard.vue')['default']
+    SkoleNavBar: typeof import('./components/skolepage/SkoleNavBar.vue')['default']
     Slider: typeof import('./components/homepage/Slider.vue')['default']
   }
 }
