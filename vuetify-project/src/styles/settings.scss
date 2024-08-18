@@ -1,0 +1,36 @@
+/**
+ * src/styles/settings.scss
+ *
+ * Configures SASS variables and Vuetify overwrites
+ */
+
+// Definér dine egne farver
+$primary-color: #003366;   // Mørk blå
+$secondary-color: #FFC72C; // Gul
+$accent-color: #4CAF50;    // Blød grøn
+$error-color: #FF5252;     // Rød til fejlmeddelelser
+$info-color: #2196F3;      // Blå til informationsmeddelelser
+$success-color: #4CAF50;   // Grøn til succesmeddelelser
+$warning-color: #FFC107;   // Gul til advarsler
+
+// Typografioverskrivninger
+$body-font-family: 'Roboto', sans-serif;
+$heading-font-family: 'Montserrat', sans-serif;
+$headings-font-weight: 600;
+$body-font-weight: 400;
+
+// Overskrivning af Vuetify tema farver
+$vuetify-theme: (
+  primary: $primary-color,
+  secondary: $secondary-color,
+  accent: $accent-color,
+  error: $error-color,
+  info: $info-color,
+  success: $success-color,
+  warning: $warning-color,
+);
+
+// Anvend Vuetify styles
+@import 'vuetify/styles';
+
+// Tilpas yderligere styles her, hvis nødvendigt
