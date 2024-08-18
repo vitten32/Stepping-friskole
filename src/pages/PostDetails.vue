@@ -43,10 +43,15 @@
   const loading = ref(true)
   const error = ref(false)
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth' // Dette giver en glidende overgang til toppen
+    });
+  }
+
   const fetchPostDetails = async () => {
     try {
-      // this is no erro
-      //
       const postId = (route.params as { id: string }).id
       const response = await axios.get<Post>(`https://stepping-friskole.dk/wp-json/wp/v2/posts/${postId}`)
       post.value = response.data
@@ -58,7 +63,10 @@
     }
   }
 
-  onMounted(fetchPostDetails)
+  onMounted(() => {
+    scrollToTop(); // Rul til toppen, når komponenten er mountet
+    fetchPostDetails(); // Hent postens detaljer
+  })
 </script>
 
 <style scoped>
