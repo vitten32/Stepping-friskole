@@ -6,15 +6,31 @@ import Layouts from 'vite-plugin-vue-layouts'
 import Vue from '@vitejs/plugin-vue'
 import VueRouter from 'unplugin-vue-router/vite'
 import Vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
-
+import Sitemap from 'vite-plugin-sitemap';
 // Utilities
 import { defineConfig } from 'vite'
 import { fileURLToPath, URL } from 'node:url'
+
+
+
 
 // https://vitejs.dev/config/
 export default defineConfig({
   base: process.env.GITHUB_PAGES === 'true' ? '/Stepping-friskole/' : '/',
   plugins: [
+    Sitemap({
+      hostname: 'https://example.com', // Skift til din webadresse
+      exclude: ['/exclude-page'], // Tilføj sider, der skal ekskluderes, hvis nødvendigt
+      routes: [
+        '/',
+        '/BoenehusetPage',
+        '/SkolePage',
+        '/SfoPage',
+        '/Kontact',
+        '/contact',
+        // Tilføj flere ruter her
+      ],
+    }),
     VueRouter({
       dts: 'src/typed-router.d.ts',
     }),

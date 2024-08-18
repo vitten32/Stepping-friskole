@@ -12,24 +12,24 @@
 
   <!-- Kort Sektion -->
   <v-container class="d-flex justify-center my-10">
-    <v-row justify="center" align="center" dense>
+    <v-row align="center" dense justify="center">
       <!-- Børnehuset Card -->
-      <v-col cols="12" md="5" lg="5" class="mb-6">
+      <v-col class="mb-6" cols="12" lg="5" md="5">
         <CardComponent
-          image="https://stepping-friskole.dk/wp-content/uploads/2019/05/IMG_0375.jpg"
-          title="Børnehuset"
           description="Trygge og udviklende omgivelser for de mindste børn."
+          image="https://stepping-friskole.dk/wp-content/uploads/2019/05/IMG_0375.jpg"
           link="/BoenehusetPage"
+          title="Børnehuset"
         />
       </v-col>
 
       <!-- Friskolen Card -->
-      <v-col cols="12" md="5" lg="5" class="mb-6">
+      <v-col class="mb-6" cols="12" lg="5" md="5">
         <CardComponent
-          image="https://stepping-friskole.dk/wp-content/uploads/2019/03/IMG_1146-930x367.jpg"
-          title="Friskolen"
           description="Et sted hvor læring og trivsel går hånd i hånd i et engagerende miljø."
+          image="https://stepping-friskole.dk/wp-content/uploads/2019/03/IMG_1146-930x367.jpg"
           link="/SkolePage"
+          title="Friskolen"
         />
       </v-col>
     </v-row>
@@ -47,11 +47,34 @@
   </v-container>
 </template>
 
-<script lang="ts" setup>
-// Script-delen kan være tom, medmindre der er yderligere logik, du skal tilføje.
+<script>
+  export default {
+    name: 'HomePage',
+    metaInfo: {
+      title: 'Velkommen til Stepping Friskole - En Skole med Værdier',
+      meta: [
+        {
+          name: 'description',
+          content: 'Stepping Friskole er en skole, der bygger på Grundtvig og Kolds skoletanker. Vi fokuserer på det enkelte barns trivsel i fællesskabet og lægger vægt på faglighed, kreativitet og ansvarlighed.',
+        },
+        {
+          property: 'og:title',
+          content: 'Velkommen til Stepping Friskole - En Skole med Værdier',
+        },
+        {
+          property: 'og:description',
+          content: 'Stepping Friskole fokuserer på det enkelte barns trivsel og læring i et stærkt fællesskab.',
+        },
+        {
+          property: 'og:image',
+          content: 'https://stepping-friskole.dk/wp-content/uploads/2019/05/IMG_0375.jpg',
+        },
+      ],
+    },
+  }
 </script>
 
-<style scoped>
+<style>
 .page-title {
   font-family: 'Gloria Hallelujah', cursive;
   font-size: 2.5rem;
