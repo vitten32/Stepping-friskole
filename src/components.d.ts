@@ -11,9 +11,11 @@ declare module 'vue' {
     CardComponent: typeof import('./components/CardComponent.vue')['default']
     HomeHeader: typeof import('./components/homepage/HomeHeader.vue')['default']
     Navbar: typeof import('./components/Navbar.vue')['default']
+    RandomPostsSection: typeof import('./components/RandomPostsSection.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     SchoolValueCard: typeof import('./components/homepage/SchoolValueCard.vue')['default']
     Slider: typeof import('./components/homepage/Slider.vue')['default']
+    WordpressImage: typeof import('./components/WordpressImage.vue')['default']
   }
 }
