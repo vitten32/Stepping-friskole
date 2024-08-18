@@ -1,1 +1,0 @@
-import{_ as o}from"./_plugin-vue_export-helper-DlAUqK2U.js";import{o as a,v as t,B as s,C as c,y as d}from"./index-D8zi4rvx.js";const p={name:"SkolePage"},_=e=>(s("data-v-afef8d91"),e=e(),c(),e),n=_(()=>d("h1",null,"Welcome to SkolePage",-1)),r=[n];function l(e,f,i,m,u,h){return a(),t("div",null,r)}const v=o(p,[["render",l],["__scopeId","data-v-afef8d91"]]);export{v as default};
