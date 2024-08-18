@@ -13,7 +13,7 @@ import { routes as autoRoutes } from 'vue-router/auto-routes';
 const customRoutes = [
   ...autoRoutes,
   {
-    path: '/post/:id',
+    path: '/post/:post_id',
     name: 'PostDetails',
     component: () => import('@/pages/PostDetails.vue'), // Importer din PostDetails-komponent
     props: true,

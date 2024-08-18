@@ -16,6 +16,5 @@ declare module 'vue' {
     RouterView: typeof import('vue-router')['RouterView']
     SchoolValueCard: typeof import('./components/homepage/SchoolValueCard.vue')['default']
     Slider: typeof import('./components/homepage/Slider.vue')['default']
-    WordpressImage: typeof import('./components/WordpressImage.vue')['default']
   }
 }

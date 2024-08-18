@@ -1,20 +1,20 @@
 <template>
   <v-container>
-    <v-row justify="center" class="my-8">
+    <v-row class="my-8" justify="center">
       <v-col cols="12" md="8">
         <!-- Spinner, mens indholdet indlæses -->
         <v-progress-circular
           v-if="loading"
-          indeterminate
-          color="primary"
-          size="70"
           class="d-flex mx-auto my-8"
-        ></v-progress-circular>
+          color="primary"
+          indeterminate
+          size="70"
+        />
 
         <!-- Kortet, hvis posten er indlæst -->
         <v-card v-if="!loading && post">
           <v-card-title class="title">{{ post.title.rendered }}</v-card-title>
-          <v-card-text v-html="post.content.rendered" class="content"></v-card-text>
+          <v-card-text class="content" v-html="post.content.rendered" />
         </v-card>
 
         <!-- Fejlbesked, hvis noget gik galt -->
@@ -25,37 +25,38 @@
     </v-row>
   </v-container>
 </template>
-
 <script lang="ts" setup>
-import { ref, onMounted } from 'vue';
-import { useRoute } from 'vue-router';
-import axios from 'axios';
+  import { onMounted, ref } from 'vue'
+  import { useRoute } from 'vue-router'
+  import axios from 'axios'
 
-interface Post {
-  id: number;
-  title: { rendered: string };
-  content: { rendered: string };
-}
-
-const route = useRoute();
-const post = ref<Post | null>(null);
-const loading = ref(true);
-const error = ref(false);
-
-const fetchPostDetails = async () => {
-  try {
-    const postId = route.params.id;
-    const response = await axios.get<Post>(`https://stepping-friskole.dk/wp-json/wp/v2/posts/${postId}`);
-    post.value = response.data;
-  } catch (err) {
-    console.error('Fejl ved hentning af post:', err);
-    error.value = true;
-  } finally {
-    loading.value = false;
+  interface Post {
+    id: number;
+    title: { rendered: string };
+    content: { rendered: string };
   }
-};
 
-onMounted(fetchPostDetails);
+  const route = useRoute()
+
+  const post = ref<Post | null>(null)
+  const loading = ref(true)
+  const error = ref(false)
+
+  const fetchPostDetails = async () => {
+    try {
+      // @ts-ignore
+      const postId = route.params.id as string
+      const response = await axios.get<Post>(`https://stepping-friskole.dk/wp-json/wp/v2/posts/${postId}`)
+      post.value = response.data
+    } catch (err) {
+      console.error('Fejl ved hentning af post:', err)
+      error.value = true
+    } finally {
+      loading.value = false
+    }
+  }
+
+  onMounted(fetchPostDetails)
 </script>
 
 <style scoped>

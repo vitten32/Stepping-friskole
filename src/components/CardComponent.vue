@@ -1,47 +1,55 @@
 <template>
   <v-card
     class="custom-card"
-    @mouseover="hover = true"
-    @mouseleave="hover = false"
-    @click="$emit('click')"
+    @click="handleClick"
+    outlined
+    hover
   >
-    <v-img :src="props.image" height="200px" alt="Card image" class="image"></v-img>
-
-    <v-card-title class="values-title">{{ props.title }}</v-card-title>
-
-    <v-card-text>{{ props.description }}</v-card-text>
-
-    <v-hover v-slot:default="{ isHovering }">
-      <transition name="fade">
-        <div v-if="isHovering" class="overlay"></div>
-      </transition>
-    </v-hover>
+    <v-img :src="image" height="200px" alt="Card image" class="image"></v-img>
+    <v-card-title class="title">{{ title }}</v-card-title>
+    <v-card-text>{{ description }}</v-card-text>
   </v-card>
 </template>
 
 <script lang="ts" setup>
-import { ref, defineProps } from 'vue';
+const props = defineProps({
+  image: {
+    type: String,
+    required: true,
+  },
+  title: {
+    type: String,
+    required: true,
+  },
+  description: {
+    type: String,
+    required: true,
+  },
+  link: {
+    type: String,
+    required: true,
+  },
+});
 
-const props = defineProps<{
-  image: string;
-  title: string;
-  description: string;
-}>();
-
-const hover = ref(false);
+const handleClick = () => {
+  window.location.href = props.link; // Naviger til det ønskede link
+};
 </script>
 
 <style scoped>
 .custom-card {
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.3s ease;
   cursor: pointer;
-  background-color: var(--background);
+  transition: transform 0.3s ease;
 }
 
 .custom-card:hover {
-  transform: translateY(-5px) scale(1.02);
+  transform: scale(1.05);
+}
+
+.title {
+  font-family: 'Gloria Hallelujah', cursive;
+  font-size: 1.5rem;
+  color: #003366;
 }
 
 .image {
@@ -50,30 +58,5 @@ const hover = ref(false);
 
 .custom-card:hover .image {
   transform: scale(1.1);
-}
-
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
-  z-index: 1;
-}
-
-.fade-enter-active, .fade-leave-active {
-  transition: opacity 0.5s;
-}
-
-.fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {
-  opacity: 0;
-}
-
-.values-title {
-  font-family: 'Gloria Hallelujah', cursive;
-  font-size: 2.5rem;
-  color: var(--text);
-  margin: 0;
 }
 </style>

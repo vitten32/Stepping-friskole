@@ -9,6 +9,7 @@
           image="https://stepping-friskole.dk/wp-content/uploads/2019/05/IMG_0375.jpg"
           title="Børnehuset"
           description="Velkommen til Børnehuset. Her finder du trygge og udviklende omgivelser for de mindste børn."
+          link="/BoenehusetPage"
         />
       </v-col>
 
@@ -18,6 +19,7 @@
           image="https://stepping-friskole.dk/wp-content/uploads/2019/03/IMG_1146-930x367.jpg"
           title="Friskolen"
           description="Friskolen er stedet, hvor læring og trivsel går hånd i hånd i et engagerende og kreativt miljø."
+          link="/SkolePage"
 
         />
       </v-col>
