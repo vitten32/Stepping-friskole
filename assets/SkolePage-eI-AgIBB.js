@@ -1,1 +1,0 @@
-import{_ as a,K as o,a4 as t,a7 as s,a8 as c,a3 as d}from"./index-r3KUdyMH.js";const _={name:"SkolePage"},n=e=>(s("data-v-afef8d91"),e=e(),c(),e),p=n(()=>d("h1",null,"Welcome to SkolePage",-1)),r=[p];function l(e,f,i,u,h,m){return o(),t("div",null,r)}const k=a(_,[["render",l],["__scopeId","data-v-afef8d91"]]);export{k as default};

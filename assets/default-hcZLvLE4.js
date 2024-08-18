@@ -1,0 +1,1 @@
+import{_ as a,y as n,z as e,G as r,H as s,x as c,o as t,J as _}from"./index-DCqR7hm2.js";const l={};function u(f,p){const o=s("router-view");return c(),n(r,null,{default:e(()=>[t(_,null,{default:e(()=>[t(o)]),_:1})]),_:1})}const i=a(l,[["render",u]]);export{i as default};
