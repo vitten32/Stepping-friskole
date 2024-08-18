@@ -45,7 +45,9 @@
 
   const fetchPostDetails = async () => {
     try {
-      const postId = route.params.id as string
+      // this is no erro
+      //
+      const postId = (route.params as { id: string }).id
       const response = await axios.get<Post>(`https://stepping-friskole.dk/wp-json/wp/v2/posts/${postId}`)
       post.value = response.data
     } catch (err) {
