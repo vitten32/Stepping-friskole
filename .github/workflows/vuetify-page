@@ -18,12 +18,14 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '21' 
+          node-version: '18' # Vælg den version af Node.js, du bruger
 
       - name: Install dependencies
         run: npm install
 
       - name: Build the app
+        env:
+          GITHUB_PAGES: true
         run: npm run build
 
       - name: Deploy to GitHub Pages
