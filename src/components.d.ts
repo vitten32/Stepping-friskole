@@ -9,15 +9,11 @@ declare module 'vue' {
   export interface GlobalComponents {
     AppFooter: typeof import('./components/AppFooter.vue')['default']
     CardComponent: typeof import('./components/CardComponent.vue')['default']
-    HelloWorld: typeof import('./components/HelloWorld.vue')['default']
-    HomeCard: typeof import('./components/homepage/HomeCard.vue')['default']
     HomeHeader: typeof import('./components/homepage/HomeHeader.vue')['default']
     Navbar: typeof import('./components/Navbar.vue')['default']
-    NavbarComponent: typeof import('./components/NavbarComponent.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     SchoolValueCard: typeof import('./components/homepage/SchoolValueCard.vue')['default']
-    SchoolValueCards: typeof import('./components/homepage/SchoolValueCards.vue')['default']
     Slider: typeof import('./components/homepage/Slider.vue')['default']
   }
 }

@@ -36,45 +36,6 @@ const darkTheme = {
   },
 }
 
-// Definer typografien for at sikre ensartethed på tværs af hele appen
-const typography = {
-  fontFamily: 'Roboto, sans-serif',
-  fontSize: 16,
-  h1: {
-    fontFamily: 'Gloria Hallelujah, cursive',
-    fontSize: '3rem',
-    fontWeight: 'bold',
-    lineHeight: 1.2,
-    letterSpacing: '0.015em',
-  },
-  h2: {
-    fontFamily: 'Gloria Hallelujah, cursive',
-    fontSize: '2.5rem',
-    fontWeight: 'bold',
-    lineHeight: 1.3,
-    letterSpacing: '0.01em',
-  },
-  h3: {
-    fontFamily: 'Gloria Hallelujah, cursive',
-    fontSize: '2rem',
-    fontWeight: 'bold',
-    lineHeight: 1.4,
-    letterSpacing: '0.01em',
-  },
-  body1: {
-    fontFamily: 'Roboto, sans-serif',
-    fontSize: '1rem',
-    lineHeight: 1.6,
-    color: '#333333',
-  },
-  body2: {
-    fontFamily: 'Roboto, sans-serif',
-    fontSize: '0.875rem',
-    lineHeight: 1.5,
-    color: '#555555',
-  },
-}
-
 // Opret Vuetify instance med temaer og typografi
 export default createVuetify({
   theme: {
@@ -83,6 +44,5 @@ export default createVuetify({
       light: lightTheme,
       dark: darkTheme,
     },
-  },
-  typography: typography,
+  }
 })

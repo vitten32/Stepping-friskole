@@ -5,11 +5,11 @@
     @mouseleave="hover = false"
     @click="$emit('click')"
   >
-    <v-img :src="image" height="200px" alt="Card image" class="image"></v-img>
+    <v-img :src="props.image" height="200px" alt="Card image" class="image"></v-img>
 
-    <v-card-title class="values-title">{{ title }}</v-card-title>
+    <v-card-title class="values-title">{{ props.title }}</v-card-title>
 
-    <v-card-text>{{ description }}</v-card-text>
+    <v-card-text>{{ props.description }}</v-card-text>
 
     <v-hover v-slot:default="{ isHovering }">
       <transition name="fade">
@@ -20,22 +20,13 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue';
+import { ref, defineProps } from 'vue';
 
-const props = defineProps({
-  image: {
-    type: String,
-    required: true,
-  },
-  title: {
-    type: String,
-    required: true,
-  },
-  description: {
-    type: String,
-    required: true,
-  },
-});
+const props = defineProps<{
+  image: string;
+  title: string;
+  description: string;
+}>();
 
 const hover = ref(false);
 </script>

@@ -9,7 +9,6 @@
           image="/img/børnehuset/Boenehuset.jpg"
           title="Børnehuset"
           description="Velkommen til Børnehuset. Her finder du trygge og udviklende omgivelser for de mindste børn."
-          @click="to('/BoenehusetPage')"
         />
       </v-col>
 
@@ -19,7 +18,7 @@
           image="/img/skolen/skolecard.jpg"
           title="Friskolen"
           description="Friskolen er stedet, hvor læring og trivsel går hånd i hånd i et engagerende og kreativt miljø."
-          @click="to('/SkolePage')"
+
         />
       </v-col>
     </v-row>
