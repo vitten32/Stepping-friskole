@@ -48,28 +48,65 @@
 </template>
 
 <script>
+  import metaMixin from '@/mixins/metaMixin.ts'
+
   export default {
     name: 'HomePage',
-    metaInfo: {
-      title: 'Velkommen til Stepping Friskole - En Skole med Værdier',
-      meta: [
-        {
-          name: 'description',
-          content: 'Stepping Friskole er en skole, der bygger på Grundtvig og Kolds skoletanker. Vi fokuserer på det enkelte barns trivsel i fællesskabet og lægger vægt på faglighed, kreativitet og ansvarlighed.',
-        },
-        {
-          property: 'og:title',
-          content: 'Velkommen til Stepping Friskole - En Skole med Værdier',
-        },
-        {
-          property: 'og:description',
-          content: 'Stepping Friskole fokuserer på det enkelte barns trivsel og læring i et stærkt fællesskab.',
-        },
-        {
-          property: 'og:image',
-          content: 'https://stepping-friskole.dk/wp-content/uploads/2019/05/IMG_0375.jpg',
-        },
-      ],
+    mixins: [metaMixin],
+    data () {
+      return {
+        pageTitle: 'Velkommen til Stepping Friskole - En Skole med Værdier',
+        metaTags: [
+          {
+            name: 'description',
+            content: 'Stepping Friskole er en skole, der bygger på Grundtvig og Kolds skoletanker. Vi fokuserer på det enkelte barns trivsel i fællesskabet og lægger vægt på faglighed, kreativitet og ansvarlighed.',
+          },
+          {
+            property: 'og:title',
+            content: 'Velkommen til Stepping Friskole - En Skole med Værdier',
+          },
+          {
+            property: 'og:description',
+            content: 'Stepping Friskole fokuserer på det enkelte barns trivsel og læring i et stærkt fællesskab.',
+          },
+          {
+            property: 'og:image',
+            content: 'https://stepping-friskole.dk/wp-content/uploads/2019/05/IMG_0375.jpg',
+          },
+          {
+            property: 'og:type',
+            content: 'website',
+          },
+          {
+            property: 'og:url',
+            content: 'https://stepping-friskole.dk',
+          },
+          {
+            name: 'keywords',
+            content: 'Friskole, Grundtvig, Kold, faglighed, fællesskab, trivsel, undervisning, børn, Børnehuset, daginstitution',
+          },
+          {
+            property: 'og:title',
+            content: 'Om Børnehuset - Trygge og Udviklende Omgivelser',
+          },
+          {
+            property: 'og:description',
+            content: 'Børnehuset på Stepping Friskole tilbyder trygge og udviklende omgivelser for de mindste børn, med fokus på trivsel og fællesskab.',
+          },
+          {
+            property: 'og:image',
+            content: 'https://stepping-friskole.dk/wp-content/uploads/2019/05/IMG_0375.jpg',
+          },
+          {
+            property: 'og:url',
+            content: 'https://stepping-friskole.dk/boenehuset',
+          },
+          {
+            name: 'author',
+            content: 'Stepping Friskole',
+          },
+        ],
+      }
     },
   }
 </script>

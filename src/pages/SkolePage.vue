@@ -9,7 +9,7 @@
       </v-col>
     </v-row>
 
-    <v-row justify="center" class="mt-10">
+    <v-row class="mt-10" justify="center">
       <v-col cols="12" md="10">
         <h2 class="section-title">Vores Værdier</h2>
         <p class="section-text">
@@ -23,7 +23,7 @@
       </v-col>
     </v-row>
 
-    <v-row justify="center" class="mt-10">
+    <v-row class="mt-10" justify="center">
       <v-col cols="12" md="10">
         <h2 class="section-title">Undervisningsmetoder</h2>
         <p class="section-text">
@@ -40,7 +40,7 @@
       </v-col>
     </v-row>
 
-    <v-row justify="center" class="mt-10">
+    <v-row class="mt-10" justify="center">
       <v-col cols="12" md="10">
         <h2 class="section-title">Målgrupper</h2>
         <p class="section-text">
@@ -52,9 +52,47 @@
 </template>
 
 <script>
-export default {
-  name: 'SkolePage',
-}
+  import metaMixin from '@/mixins/metaMixin.ts'
+
+  export default {
+    name: 'SkolePage',
+    mixins: [metaMixin],
+    data () {
+      return {
+        pageTitle: 'Om Stepping Friskole - Faglighed og Fællesskab',
+        metaTags: [
+          {
+            name: 'description',
+            content: 'Stepping Friskole tilbyder en stærk faglig undervisning baseret på Grundtvig og Kolds skoletanker. Her er trivsel og fællesskab i fokus.',
+          },
+          {
+            property: 'og:title',
+            content: 'Om Stepping Friskole - Faglighed og Fællesskab',
+          },
+          {
+            property: 'og:description',
+            content: 'Lær mere om Stepping Friskoles fokus på faglighed og fællesskab, hvor hvert barn føler sig set og hørt.',
+          },
+          {
+            property: 'og:image',
+            content: 'https://stepping-friskole.dk/wp-content/uploads/2019/03/IMG_1146-930x367.jpg',
+          },
+          {
+            name: 'keywords',
+            content: 'Friskole, Grundtvig, Kold, faglighed, fællesskab, trivsel, undervisning, børn',
+          },
+          {
+            name: 'author',
+            content: 'Stepping Friskole',
+          },
+          {
+            property: 'og:url',
+            content: 'https://stepping-friskole.dk/skolepage',
+          },
+        ],
+      }
+    },
+  }
 </script>
 
 <style scoped>
