@@ -1,0 +1,1 @@
+import{_ as o,y as a,L as t,ai as s,aj as c,ah as n}from"./index-Cbh5NEfa.js";const d={name:"BoenehusetPage"},_=e=>(s("data-v-ce23a51d"),e=e(),c(),e),p=_(()=>n("h1",null,"Welcome to Boenehuset Page",-1)),r=[p];function h(e,u,i,l,f,m){return a(),t("div",null,r)}const I=o(d,[["render",h],["__scopeId","data-v-ce23a51d"]]);export{I as default};

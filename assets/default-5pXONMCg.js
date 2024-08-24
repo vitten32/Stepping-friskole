@@ -1,0 +1,1 @@
+import{_ as a,z as n,A as e,H as r,J as s,y as c,o as t,K as _}from"./index-Cbh5NEfa.js";const l={};function u(f,p){const o=s("router-view");return c(),n(r,null,{default:e(()=>[t(_,null,{default:e(()=>[t(o)]),_:1})]),_:1})}const i=a(l,[["render",u]]);export{i as default};
