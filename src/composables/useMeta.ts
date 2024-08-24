@@ -1,7 +1,10 @@
 // src/composables/useMeta.ts
-import { onMounted, Ref, ref, watch } from 'vue'
+import { onMounted, Ref, watch } from 'vue' // Removed 'ref' from imports
 
-export function useMeta (pageTitle: Ref<string>, metaTags: Ref<Array<{ name?: string; property?: string; content: string }>>) {
+export function useMeta (
+  pageTitle: Ref<string>,
+  metaTags: Ref<Array<{ name?: string; property?: string; content: string }>>
+) {
   // Watch for changes to pageTitle and update document title
   watch(pageTitle, newTitle => {
     document.title = newTitle
