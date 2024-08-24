@@ -1,39 +1,39 @@
 <template>
   <v-card
     class="custom-card"
-    @click="handleClick"
-    outlined
     hover
+    outlined
+    @click="handleClick"
   >
-    <v-img :src="image" height="200px" alt="Card image" class="image"></v-img>
+    <v-img alt="Card image" class="image" height="200px" :src="image" />
     <v-card-title class="title">{{ title }}</v-card-title>
     <v-card-text>{{ description }}</v-card-text>
   </v-card>
 </template>
 
 <script lang="ts" setup>
-const props = defineProps({
-  image: {
-    type: String,
-    required: true,
-  },
-  title: {
-    type: String,
-    required: true,
-  },
-  description: {
-    type: String,
-    required: true,
-  },
-  link: {
-    type: String,
-    required: true,
-  },
-});
+  const props = defineProps({
+    image: {
+      type: String,
+      required: true,
+    },
+    title: {
+      type: String,
+      required: true,
+    },
+    description: {
+      type: String,
+      required: true,
+    },
+    link: {
+      type: String,
+      required: true,
+    },
+  })
 
-const handleClick = () => {
-  window.location.href = props.link; // Naviger til det ønskede link
-};
+  const handleClick = () => {
+    window.location.href = props.link // Naviger til det ønskede link
+  }
 </script>
 
 <style scoped>

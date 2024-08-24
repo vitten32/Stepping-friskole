@@ -15,7 +15,6 @@ declare module 'vue' {
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     SchoolValueCard: typeof import('./components/homepage/SchoolValueCard.vue')['default']
-    SkoleNavBar: typeof import('./components/skolepage/SkoleNavBar.vue')['default']
     Slider: typeof import('./components/homepage/Slider.vue')['default']
   }
 }
